@@ -46,7 +46,6 @@ export interface Reducer {
 
 export interface UseGame {
   (): State & {
-    onNewGame: () => void;
     slideTo: (diffX: number, diffY: number) => void;
   };
 }

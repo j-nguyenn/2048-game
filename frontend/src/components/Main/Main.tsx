@@ -35,7 +35,7 @@ const useStyles = makeStyles(() => {
 
 const Game: React.FC = () => {
   const { isGameStarted, roomSettings } = React.useContext(GameContext);
-  const { grid, changing, onNewGame, slideTo } = useGame();
+  const { grid, changing, slideTo } = useGame();
   const classes = useStyles({});
   const slideHandlers = useSlide(slideTo, changing);
 

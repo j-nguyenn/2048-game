@@ -79,27 +79,6 @@ const useGame: UseGame = () => {
     }
   }, [isGameStarted, grid]);
 
-  const onNewGame = useCallback(() => {
-    if (!game.current) {
-      game.current = new Game(6);
-      game.current.generateGrid();
-      game.current.randomSetCell(2);
-    }
-
-    const score = 0,
-      bestScore = state.bestScore,
-      step = 0,
-      isDone = false;
-    dispatch({
-      type: "init",
-      grid: game.current.grid,
-      score,
-      bestScore,
-      step,
-      isDone,
-    });
-  }, [state.bestScore]);
-
   const handleGameUpdate = (newGrid: number[][]) => {
     if (socketService.socket) {
       gameService.updateGame(socketService.socket, newGrid);
@@ -137,7 +116,7 @@ const useGame: UseGame = () => {
     },
     [state.changing, state.grid, state.isDone]
   );
-  return { ...state, onNewGame, slideTo };
+  return { ...state, slideTo };
 };
 
 export default useGame;

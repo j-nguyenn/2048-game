@@ -11,15 +11,6 @@ export class Game {
     this.size = numberOfTiles ?? NUMBER_OF_TILES;
   }
 
-  generateGrid(): Grid {
-    if (!this.grid) {
-      this.grid = new Array(this.size)
-        .fill(0)
-        .map(() => new Array(this.size).fill(0));
-    }
-    return this.grid;
-  }
-
   getEmptyCoords(): number[][] {
     const list = [];
     for (let y = 0; y < this.grid.length; y++) {

@@ -36,13 +36,13 @@ the values closest to the wall should merge first resulting in 2 4.
 1. Start frontend 
 ```
 cd frontend
-yarn install
-yarn start
+npm install
+npm start
 ```
 
 2. Start backend
 ```
 cd backend
-yarn install
-yarn start
+npm install
+npm start
 ```
